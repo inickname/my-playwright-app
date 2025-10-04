@@ -2,13 +2,13 @@ from pages.base_page import BasePage
 
 
 class LoginPage(BasePage):
-    def __init__(self, page):
-        super().__init__(page)
-        self._endpoint = ''
-
     USERNAME_SELECTOR = '#user-name'
     PASSWORD_SELECTOR = '#password'
     LOGIN_BUTTON_SELECTOR = '#login-button'
+
+    def __init__(self, page):
+        super().__init__(page)
+        self._endpoint = ''
 
     def login(self, username, password):
         self.navigate_to()
