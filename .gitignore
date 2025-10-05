@@ -1,5 +1,5 @@
 .idea/
 __pycache__/
-pages/__pycache__/
+src/pages/__pycache__/
 allure-results
 .env

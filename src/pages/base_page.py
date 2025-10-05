@@ -1,8 +1,10 @@
 from playwright.sync_api import expect
 
+from src.enums.urls import Url
+
 
 class BasePage:
-    __BASE_URL = 'https://www.saucedemo.com'
+    __BASE_URL = Url.BASE_URL.value
 
     def __init__(self, page):
         self.page = page
