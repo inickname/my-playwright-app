@@ -11,6 +11,9 @@ class LoginPage(BasePage):
         self._endpoint = ''
 
     def login(self, username, password):
+        """
+        Авторизация пользователя.
+        """
         self.navigate_to()
         self.wait_for_selector_and_fill(self.USERNAME_SELECTOR, username)
         self.wait_for_selector_and_fill(self.PASSWORD_SELECTOR, password)

@@ -1,3 +1,4 @@
+import allure
 from faker import Faker
 
 from src.enums.data import AuthData
@@ -13,7 +14,11 @@ class TestOrders:
     USERNAME = AuthData.username.value
     PASSWORD = AuthData.password.value
 
+    @allure.title("Оформление заказа")
     def test_checkout_order(self, browser):
+        """
+        Сценарий: авторизоваться, оформить заказ и выйти из личного кабинета.
+        """
         page = browser.new_page()
         login_page = LoginPage(page)
         inventory_page = InventoryPage(page)

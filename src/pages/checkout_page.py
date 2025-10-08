@@ -15,16 +15,25 @@ class CheckoutPage(BasePage):
         self._endpoint = 'checkout-step-one.html'
 
     def start_checkout(self):
+        """
+        Начало оформления заказа.
+        """
         self.wait_for_selector_and_click(self.CHECKOUT_BUTTON_SELECTOR)
         self.assert_element_is_visible(self.FIRST_NAME_SELECTOR)
 
     def fill_checkout_form(self, first_name, last_name, postal_code):
+        """
+        Заполнение формы оформления заказа.
+        """
         self.wait_for_selector_and_type(self.FIRST_NAME_SELECTOR, first_name, 100)
         self.wait_for_selector_and_type(self.LAST_NAME_SELECTOR, last_name, 100)
         self.wait_for_selector_and_type(self.POSTAL_CODE_SELECTOR, postal_code, 100)
         self.assert_input_value(self.POSTAL_CODE_SELECTOR, postal_code)
 
     def finish_checkout(self):
+        """
+        Завершение оформления заказа.
+        """
         self.wait_for_selector_and_click(self.CONTINUE_BUTTON_SELECTOR)
         self.assert_element_is_visible(self.FINISH_BUTTON_SELECTOR)
 

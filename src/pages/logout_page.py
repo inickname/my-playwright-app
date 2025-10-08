@@ -10,6 +10,9 @@ class LogoutPage(BasePage):
         self._endpoint = ''
 
     def logout(self):
+        """
+        Выход из личного кабинета пользователя.
+        """
         self.wait_for_selector_and_click(self.BURGER_BUTTON_SELECTOR)
         self.assert_element_is_visible(self.LOGOUT_SELECTOR)
 
